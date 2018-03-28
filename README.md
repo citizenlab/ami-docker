@@ -2,6 +2,8 @@
 
 So far this repo only manages the AMI Frontend component, but we'll add support for the others soon.
 
+NOTE: This Dockerfile is geared towards developing the app, not building it. The built app is just static HTML so won't need so much overhead.
+
 ## Instructions:
 
 Clone the AMI frontend in this repo's working directory:
