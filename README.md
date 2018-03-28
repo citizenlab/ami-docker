@@ -26,5 +26,5 @@ Then run:
 Visit http://localhost:9000 in your browser
 
 ## Known issues:
-1. It would be great to not have to bind ports 9000 and 35729 every time the command is run, but put it in the DockerFile
+1. It would be great to not have to manually bind ports 9000 and 35729 every time the command is run, but put it in the DockerFile
 1. It would be great to be able to live-edit the code in ami-code and sync those changes with the container. This will the grunt livereload functionality kick in and speed up dev time.
