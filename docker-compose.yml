@@ -1,0 +1,33 @@
+my-wpdb:
+  image: mysql
+  ports:
+    - "8081:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: wordpress
+    
+my-wp:
+  build: ./wp
+  volumes:
+    - ./wp/install:/var/www/html
+  ports:
+    - "8080:80"
+  links:
+    - my-wpdb:mysql
+  environment:
+    WORDPRESS_DB_PASSWORD: wordpress
+
+setup:
+  build: ./scripts
+  volumes_from:
+    - my-wp
+  links:
+    - my-wpdb:mysql
+  entrypoint: bash  
+  command: "wp"
+
+frontend:
+  build: ./frontend
+  ports:
+    - "9000:9000"
+  entrypoint: grunt
+  command: "serve"

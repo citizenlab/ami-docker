@@ -36,8 +36,7 @@ RUN npm install
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 RUN bower install
 
-EXPOSE 9000:9000
-
+COPY run.sh /home/
 # Defines the default command to be run once container is up and running.
 # It will probably make sense to have "run.sh" which will actually define these.
 CMD ["grunt", "serve"]
