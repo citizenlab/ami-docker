@@ -7,10 +7,16 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # Basic update/upgrade mechanism + installs necessary packages
 RUN apt update && \
     apt upgrade -y && \
-    apt install apt-transport-https ca-certificates nodejs npm wget curl git -y
+    apt install apt-transport-https ca-certificates nodejs wget curl bzip2 git -y
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 5.10.1
+ENV NODE_VERSION 8.11.1
+
+# Install Yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \ 
+    && apt update \
+    && apt install yarn
 
 # Install nvm with node and npm
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash \
@@ -22,7 +28,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 # Install Bower & Grunt using npm
-RUN npm install -g bower grunt-cli
+RUN yarn global add bower grunt-cli
 
 # Defines the default work directory
 WORKDIR /data
@@ -30,7 +36,7 @@ WORKDIR /data
 # Copies AMI files to the desired directory
 COPY ./ami-code /data
 
-RUN npm install
+RUN yarn install
 
 # Allow root for bower
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
