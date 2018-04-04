@@ -27,8 +27,6 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
-# Install Bower & Grunt using npm
-RUN yarn global add bower grunt-cli
 
 # Defines the default work directory
 WORKDIR /data
@@ -38,11 +36,6 @@ COPY ./ami-code /data
 
 RUN yarn install
 
-# Allow root for bower
-RUN echo '{ "allow_root": true }' > /root/.bowerrc
-RUN bower install
-
-COPY run.sh /home/
 # Defines the default command to be run once container is up and running.
 # It will probably make sense to have "run.sh" which will actually define these.
-CMD ["grunt", "serve"]
+CMD ["yarn", "run start"]

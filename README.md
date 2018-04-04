@@ -23,6 +23,8 @@ In order to complete the CMS configuration, some more steps are required:
 1. Go here: http://localhost:8080/wp-admin/options-permalink.php
 1. Turn on the "Day and name" permalink structure option. The AMI API will break without url rewriting enabled through this method.
 1. Visit the plugins page and enable qTranslate-X
+1. Visit http://localhost:8080/wp-admin/options-general.php?page=qtranslate-x#general
+1. Under URL Modification Mode, deselect "Hide URL language information for default language."
 1. Visit http://localhost:8080/wp-admin/options-general.php?page=acf-qtranslate and check "Enable translation for Standard Field Types". Save changes.
 1. Test the API by visiting http://localhost:8080/wp-json/. If it's a 404 there's a problem.
 

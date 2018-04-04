@@ -28,6 +28,6 @@ setup:
 frontend:
   build: ./frontend
   ports:
-    - "9000:9000"
-  entrypoint: grunt
-  command: "serve"
+    - "1234:1234"
+  entrypoint: yarn
+  command: "run start"

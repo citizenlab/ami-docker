@@ -5,5 +5,7 @@ wp plugin install "regenerate-thumbnails" "advanced-custom-fields" "wordpress-im
 wp plugin deactivate qtranslate-x
 wp plugin activate ami-api
 wp plugin activate WP-JSON-API-ACF
-wp import /home/advanced-custom-field-export.xml --authors=skip
+# wp import /home/advanced-custom-field-export.xml --authors=skip
 cat /home/cors.php >> wp-content/themes/twentyseventeen/functions.php
+# wp post delete $(wp post list --post_type='request-template, jurisdiction, operator-industry, operator-status, operator, operator-service, request-components, identifier, data-bank , links'  --format=ids)
+wp import /home/default-posts.xml --authors=skip
