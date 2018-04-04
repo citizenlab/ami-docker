@@ -28,6 +28,6 @@ setup:
 frontend:
   build: ./frontend
   ports:
-    - "1234:1234"
+    - "1234:3333"
   entrypoint: yarn
   command: "run start"
