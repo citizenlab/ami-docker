@@ -23,7 +23,7 @@ setup:
   links:
     - my-wpdb:mysql
   entrypoint: bash  
-  command: "wp"
+  command: ""
 
 frontend:
   build: ./frontend
