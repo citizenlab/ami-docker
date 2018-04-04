@@ -1,3 +1,4 @@
 .DS_Store
 frontend/ami-code
 wp/install
+.vscode/
