@@ -1,7 +1,9 @@
 # AMI Docker
 
 # Initial set up
-From the project root run `git clone https://github.com/andrewhilts/ami frontend/ami-code`
+From the project root run `git clone https://github.com/andrewhilts/ami frontend/ami-code`.
+
+Run `cd ami-code; git checkout webpack`
 
 Run `docker-compose build` to start with. This will get a basic WordPress install running, along with the dependencies for the frontend.
 
