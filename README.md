@@ -5,7 +5,7 @@ From the project root run `git clone https://github.com/andrewhilts/ami frontend
 
 Run `cd frontend/ami-code; git checkout webpack`
 
-Run `docker-compose build` to start with. This will get a basic WordPress install running, along with the dependencies for the frontend.
+Run `cd ../../; docker-compose build` to start with. This will get a basic WordPress install running, along with the dependencies for the frontend.
 
 Now run `docker-compose up -d`, which will start up the containers.
 
