@@ -9,7 +9,7 @@ Run `docker-compose build` to start with. This will get a basic WordPress instal
 
 Now run `docker-compose up -d`, which will start up the containers.
 
-## CMS configuration
+## CMS automated configuration
 Now configure the Wordpress install, by running `docker-compose run --rm setup /home/wp-ami-setup.sh`. This will do the following:
 
 1. Finish the Wordpress setup wizard programatically.
@@ -18,7 +18,9 @@ Now configure the Wordpress install, by running `docker-compose run --rm setup /
 1. Custom field types get defined.
 1. Default content gets imported
 1. Two functions get appended to the default `twentyseventeen` Wordpress theme's `functions.php` file. One sets up CORS for all origins, which may not be suitable for production. The other function suppresses PHP error messages.
-1. The qTranslate-x plugin gets patched to fix an error.
+
+## CMS manual configuration
+The one step you have to do manually to get started is to log in to the CMS at http://localhost:8080/wp-login.php using the credentials listed in `scripts/wp-ami-setup.sh`. Then go to the plugins page and manually activate qtranslate-x. For some reason you can't activate it manually with `wp-cli` without triggering errors.
 
 
 ## Frontend configuration
