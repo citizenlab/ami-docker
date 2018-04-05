@@ -27,7 +27,7 @@ The one step you have to do manually to get started is to log in to the CMS at h
 1. Navigate to `frontend/ami-code/app/scripts/modules/config`.
 1. There, edit `localConfig.js.default`. The value for `jurisdictionID` should already correspond to the ID of the jurisdiction imported into the CMS during the initial configuration. Save the file.
 1. Copy `localConfig.js.default` to `localConfig.js`
-1. From the project root, run `docker cp ./frontend/ami-code/app amidocker_frontend_1:/data/`. This should copy over the changes you've made to the code.
+1. From the project root, run `docker cp ./frontend/ami-code/app amidocker_frontend_1:/data/`. This should copy over the changes you've made to the code to the frontend container.
 
 ## Review
 1. Visit http://localhost:3333 to check out the frontend.
