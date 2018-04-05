@@ -32,6 +32,3 @@ The one step you have to do manually to get started is to log in to the CMS at h
 ## Review
 1. Visit http://localhost:3333 to check out the frontend.
 1. Visit http://localhost:8080 to check out the CMS.
-
-## TODO
-Set up so you can edit locally files on the frontend and easily push them to the docker container.
