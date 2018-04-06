@@ -24,7 +24,8 @@ docker-compose build
 docker-compose up -d
 
 # Configure the CMS
-docker-compose run --rm setup /home/wp-ami-setup.sh
+echo "Waiting for a minute to make sure the MYSQL database is ready to be linked to the WP install"
+sleep 60
 docker-compose run --rm setup /home/wp-ami-setup.sh
 
 # Set up the frontend config
