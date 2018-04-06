@@ -12,6 +12,8 @@ To get started, simply clone this repository, and from the project root, run: `.
 
 The install script should take care of almost everything you need to set up the various AMI system components: It installs and configures Wordpress, which is the CMS / API for AMI. It also sets up the AMI frontend, which is an AngularJS application.
 
+The only manual step to take is to log into the CMS after it's installed (the install script will let you know) and enable the `qtranslate-X` plugin.
+
 ## Review
 Once installation is complete:
 
