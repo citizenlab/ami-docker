@@ -8,7 +8,7 @@ This repository contains everything you need to get started developing AMI.
 You'll need to have Docker installed on your computer.
 
 ## Installing AMI
-To get started, simply clone this repository, and from the project root, run: `./install.sh`
+To get started, simply open up your terminal, clone this repository, and from the project root, run: `./install.sh`
 
 The install script should take care of almost everything you need to set up the various AMI system components: It installs and configures Wordpress, which is the CMS / API for AMI. It also sets up the AMI frontend, which is an AngularJS application.
 
