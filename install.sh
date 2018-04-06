@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Installing the Access My Info development environment."
+echo "This may take several minutes."
+
 # Check to see if Docker is installed
 if ! [ -x "$(command -v docker-compose)" ]; then
   echo 'Error: Docker is not installed. Please install Docker and re-run this script.' >&2
@@ -19,8 +22,12 @@ git checkout webpack
 cd $DIR
 docker-compose build
 docker-compose up -d
-sleep 5
+
+# Configure the CMS
 docker-compose run --rm setup /home/wp-ami-setup.sh
+docker-compose run --rm setup /home/wp-ami-setup.sh
+
+# Set up the frontend config
 cp ./frontend/ami-code/app/scripts/modules/config/localConfig.js.default ./frontend/ami-code/app/scripts/modules/config/localConfig.js
 docker cp ./frontend/ami-code/app amidocker_frontend_1:/data/
 
