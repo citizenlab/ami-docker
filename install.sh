@@ -18,6 +18,12 @@ git clone https://github.com/andrewhilts/ami frontend/ami-code
 cd frontend/ami-code
 git checkout webpack
 
+# Get the code for the community tools
+cd $DIR
+git clone https://github.com/andrewhilts/ami-community community/ami-code
+cd community/ami-code
+mkdir jurisdiction_events
+
 # Set up and configure docker containers
 cd $DIR
 docker-compose build
@@ -31,6 +37,9 @@ docker-compose run --rm setup /home/wp-ami-setup.sh
 # Set up the frontend config
 cp ./frontend/ami-code/app/scripts/modules/config/localConfig.js.default ./frontend/ami-code/app/scripts/modules/config/localConfig.js
 docker cp ./frontend/ami-code/app amidocker_frontend_1:/data/
+
+# Copy community config
+cp ./community/ami-code/jurisdiction_events/47.json.default
 
 # Output final step to take
 echo "Installation almost complete. Log into the CMS at http://localhost:8080/wp-login.php and enable qTranslate-x plugin."

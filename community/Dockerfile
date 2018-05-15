@@ -36,6 +36,7 @@ COPY ./ami-code /data
 
 RUN yarn install
 
-# Defines the default command to be run once container is up and running.
-# It will probably make sense to have "run.sh" which will actually define these.
-CMD ["yarn", "run start"]
+CMD ["node", "database/install.js"]
+CMD ["node", "database/install-events.js"]
+
+CMD ["node", "app.js"]

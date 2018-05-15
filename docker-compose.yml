@@ -31,3 +31,16 @@ frontend:
     - "3333:3333"
   entrypoint: yarn
   command: "run start"
+
+community-db:
+  image: postgres
+  ports:
+    - "5432:5432"
+  environment:
+    POSTGRES_USER: "flaskapp"
+    POSTGRES_PASSWORD: "hunter2"
+
+community:
+  build: ./community
+  links:
+    - community-db
