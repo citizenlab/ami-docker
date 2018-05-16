@@ -16,7 +16,6 @@ cd $DIR
 # Get the code for the frontend
 git clone https://github.com/andrewhilts/ami frontend/ami-code
 cd frontend/ami-code
-git checkout webpack
 
 # Get the code for the community tools
 cd $DIR
