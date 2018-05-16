@@ -52,7 +52,7 @@ The foundation of AMI Community Tools' notification system is a concept called a
 
 For example, in Canada, one jurisdiction event might be to send a reminder to requesters 30 days after their request, asking if they've heard a response and providing helpful links if they haven't. After 60 days, another event might be an email with a survey link in it, asking for information about how the request process went.
 
-To create events for a new jurisdiction, you'll have to create a new or edit the existing JSON file in the `jurisdiction_events` folder, with the naming convention `{{jurisdiction_id}}.json`, where `jurisdiction_id` is the ID of the jurisdiction in question in the AMI CMS. By default, the CMS uses ID 47 for its jurisdiction.
+To create events for a new jurisdiction, you'll have to create a new or edit the existing JSON file in the `jurisdiction_events` folder, with the naming convention `{{jurisdiction_id}}.json`, where `jurisdiction_id` is the ID of the jurisdiction in question in the AMI CMS. By default, the CMS uses ID 153 for its jurisdiction.
 
 Each jurisdiction event file should have the following properties:
 
@@ -69,10 +69,10 @@ Each event object should have the following properties:
 
 Here is a full juridicition_events record:
 
-**47.json**
+**153.json**
 
 	{
-		"jurisdiction_id": 47,
+		"jurisdiction_id": 153,
 		"events": [
 			{
 				"id": "reminder",
@@ -107,7 +107,7 @@ Email templates are used when sending out any email. Each email template is a fo
 
 Folders names have a single-word prefix, a hyphen, followed by a 2 word language code, another hyphen, then the jurisdiction ID. 
 
-For example: `confirmation-en-18`
+For example: `confirmation-en-153`
 
 **This naming convention *must* be followed for the email templates to be found by the program.**
 
