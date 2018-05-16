@@ -43,7 +43,7 @@ There are a few manual steps to take to fully set up and configure AMI after ins
 
 You will then have to edit a few lines of `frontend/ami-code/app/scripts/modules/config/localConfig.js` the `supportedLanguages` array of language config objects to create an entry for your new language code. You may delete other language code entries here to remove them from the user interface.
 
-Ensure your changes has been synced with the Docker container by running `./sync.sh`
+**Ensure your changes has been synced with the Docker container by running `./sync.sh`**
 
 **The AMI CMS** can be internationalized using the q-translateX plugin. Log into the CMS and go to the q-translateX plugin settings page. You can enable and disable languages here. Make sure the language code here corresponds to the language code you define in the frontend configuration. CMS post objects will have language tabs you can click on to edit different translations of the same content object.
 
