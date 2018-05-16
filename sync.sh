@@ -6,3 +6,4 @@ cd $DIR
 
 # Copy over latest changes to the app
 docker cp ./frontend/ami-code/app ami-docker_frontend_1:/data/
+docker cp ./community/ami-code ami-docker_community_1:/data/
