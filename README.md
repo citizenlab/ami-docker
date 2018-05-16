@@ -18,6 +18,7 @@ This repository contains everything you need to get started developing AMI.
 AMI is made up of three components. The AMI frontend javascript app ("AMI Frontend"), the Wordpress CMS powering the frontend's content ("AMI CMS"), and the node.js app that powers the email and stats tracking system ("AMI Community Tools").
 
 ![AMI Architecture](docs/AMI-architecture.png)
+
 *Figure 1: AMI Software Architecture*
 
 ## Prerequisites
