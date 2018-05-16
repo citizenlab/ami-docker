@@ -1,5 +1,5 @@
 # Bases the image on Ubuntu 16.04 (since 18.04 is still not available)
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # Replace shell with bash so we can source files
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -7,7 +7,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # Basic update/upgrade mechanism + installs necessary packages
 RUN apt update && \
     apt upgrade -y && \
-    apt install apt-transport-https ca-certificates nodejs wget curl bzip2 git -y
+    apt install python g++ make gnupg apt-transport-https ca-certificates nodejs wget curl bzip2 git -y
 
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 9.0.0
@@ -25,6 +25,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
     && nvm alias default $NODE_VERSION \
     && nvm use default
 
+ENV HEL world
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
@@ -35,8 +36,3 @@ WORKDIR /data
 COPY ./ami-code /data
 
 RUN yarn install
-
-CMD ["node", "database/install.js"]
-CMD ["node", "database/install-events.js"]
-
-CMD ["node", "app.js"]

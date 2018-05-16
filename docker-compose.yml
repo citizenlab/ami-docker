@@ -36,11 +36,12 @@ community-db:
   image: postgres
   ports:
     - "5432:5432"
-  environment:
-    POSTGRES_USER: "flaskapp"
-    POSTGRES_PASSWORD: "hunter2"
 
 community:
   build: ./community
+  ports:
+    - "3214:3000"
   links:
     - community-db
+  entrypoint: node
+  command: "app.js"

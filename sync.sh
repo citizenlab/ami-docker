@@ -5,4 +5,4 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
 # Copy over latest changes to the app
-docker cp ./frontend/ami-code/app amidocker_frontend_1:/data/
+docker cp ./frontend/ami-code/app ami-docker_frontend_1:/data/

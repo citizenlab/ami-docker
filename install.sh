@@ -24,6 +24,15 @@ git clone https://github.com/andrewhilts/ami-community community/ami-code
 cd community/ami-code
 mkdir jurisdiction_events
 
+cd $DIR
+# Set up the frontend config
+cp ./frontend/ami-code/app/scripts/modules/config/localConfig.js.default ./frontend/ami-code/app/scripts/modules/config/localConfig.js
+
+# Set up community config
+cp ./community/ami-code/conf/db.conf.js.default ./community/ami-code/conf/db.conf.js
+cp ./community/ami-code/conf/policy.conf.js.default ./community/ami-code/conf/policy.conf.js
+cp ./community/ami-code/conf/sendgrid.conf.js.default ./community/ami-code/conf/sendgrid.conf.js
+
 # Set up and configure docker containers
 cd $DIR
 docker-compose build
@@ -34,12 +43,8 @@ echo "Waiting for a minute to make sure the MYSQL database is ready to be linked
 sleep 60
 docker-compose run --rm setup /home/wp-ami-setup.sh
 
-# Set up the frontend config
-cp ./frontend/ami-code/app/scripts/modules/config/localConfig.js.default ./frontend/ami-code/app/scripts/modules/config/localConfig.js
-docker cp ./frontend/ami-code/app amidocker_frontend_1:/data/
-
-# Copy community config
-cp ./community/ami-code/jurisdiction_events/47.json.default
+# Install community tools database
+docker-compose run -dcommunity /home/install.sh
 
 # Output final step to take
 echo "Installation almost complete. Log into the CMS at http://localhost:8080/wp-login.php and enable qTranslate-x plugin."
