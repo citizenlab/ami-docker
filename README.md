@@ -149,8 +149,4 @@ To make livereload even better, set up your IDE or a script to watch for file ch
 	}
 
 ## Deploying to production
-Todo...
-
-## Troubleshooting
-> Error: Error establishing a database connection. This either means that the username and password information in your `wp-config.php` file is incorrect or we can’t contact the database server at `mysql`. This could mean your host’s database server is down.
-
+This hasn't been attempted yet (using Docker).
