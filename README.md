@@ -95,7 +95,7 @@ Here is a full juridicition_events record:
 These events can be installed into the AMI Community system through 2 steps. 
 
 1. Ensure your file has been synced with the Docker container by running `./sync.sh`
-2. Run `docker-compose run -d community /home/install.sh`
+2. Run `docker-compose run -d community /home/install-events.sh`
 
 Once the events are installed, all future requests will be enrolled to receive email notifications for each jurisdiction event.
 
@@ -148,3 +148,7 @@ To make livereload even better, set up your IDE or a script to watch for file ch
 
 ## Deploying to production
 Todo...
+
+## Troubleshooting
+> Error: Error establishing a database connection. This either means that the username and password information in your `wp-config.php` file is incorrect or we can’t contact the database server at `mysql`. This could mean your host’s database server is down.
+

@@ -1,10 +1,10 @@
 my-wpdb:
-  image: mysql
+  image: mysql:5.7
   ports:
     - "8081:3306"
   environment:
     MYSQL_ROOT_PASSWORD: wordpress
-    
+  
 my-wp:
   build: ./wp
   volumes:

@@ -42,6 +42,9 @@ echo "Waiting for a minute to make sure the MYSQL database is ready to be linked
 sleep 60
 docker-compose run --rm setup /home/wp-ami-setup.sh
 
+# Install database for community tools
+docker-compose exec community /data/install.sh
+
 # Output final step to take
 echo "Installation almost complete. Log into the CMS at http://localhost:8080/wp-login.php and enable qTranslate-x plugin."
 echo "After that, visit http://localhost:3333 to check out the AMI frontend."
