@@ -43,5 +43,5 @@ community:
     - "3214:3000"
   links:
     - community-db
-  entrypoint: node
+  entrypoint: nodemon
   command: "app.js"

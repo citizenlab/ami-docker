@@ -1,4 +1,4 @@
-# Bases the image on Ubuntu 16.04 (since 18.04 is still not available)
+# Bases the image on Ubuntu 18.04
 FROM ubuntu:18.04
 
 # Replace shell with bash so we can source files
@@ -36,3 +36,4 @@ WORKDIR /data
 COPY ./ami-code /data
 
 RUN yarn install
+RUN yarn global add nodemon

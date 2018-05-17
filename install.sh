@@ -14,12 +14,12 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
 # Get the code for the frontend
-git clone https://github.com/andrewhilts/ami frontend/ami-code
+git clone https://github.com/citizenlab/ami-frontend frontend/ami-code
 cd frontend/ami-code
 
 # Get the code for the community tools
 cd $DIR
-git clone https://github.com/andrewhilts/ami-community community/ami-code
+git clone https://github.com/citizenlab/ami-community community/ami-code
 cd community/ami-code
 mkdir jurisdiction_events
 
