@@ -95,7 +95,7 @@ Here is a full juridicition_events record:
 These events can be installed into the AMI Community system through 2 steps. 
 
 1. Ensure your file has been synced with the Docker container by running `./sync.sh`
-2. Run `docker-compose run -d community /home/install-events.sh`
+2. Run `docker-compose exec community /data/install-events.sh`
 
 Once the events are installed, all future requests will be enrolled to receive email notifications for each jurisdiction event.
 
