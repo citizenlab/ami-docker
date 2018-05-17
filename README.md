@@ -4,6 +4,8 @@ Access My Info (AMI) is a web application that makes it easy for people to creat
 
 This repository contains everything you need to get started developing AMI.
 
+**IMPORTANT: This repository is meant for a development environment, and has not been used in production.**
+
 ## Table of Contents
 1. [Access My Info](#access-my-info)
 1. [Prerequisites](#prerequisites)
