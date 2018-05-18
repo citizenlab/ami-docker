@@ -40,6 +40,9 @@ There are a few manual steps to take to fully set up and configure AMI after ins
 
 ## Configuration
 
+### Final steps
+Log into the CMS (http://localhost:8080/wp-login.php) using the credentials defined in `scripts/wp-ami-setup.sh` after installation is done (the install script will let you know) and enable the `qtranslate-X` plugin.
+
 ### Internationalization
 **The AMI Frontend** can be internationalized by creating new JSON translation files in the `frontend/ami-code/app/translations` folder, with the naming convetion `{{two letter ISO language code}}-locale.json`.
 
