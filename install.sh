@@ -25,7 +25,8 @@ mkdir jurisdiction_events
 
 cd $DIR
 # Set up the frontend config
-cp ./frontend/ami-code/app/scripts/modules/config/localConfig.js.default ./frontend/ami-code/app/scripts/modules/config/localConfig.js
+cp ./frontend/ami-code/config/local.json.default ./frontend/ami-code/config/local.json
+cp ./frontend/ami-code/config/dev.json.default ./frontend/ami-code/config/dev.json
 
 # Set up community config
 cp ./community/ami-code/conf/db.conf.js.default ./community/ami-code/conf/db.conf.js
