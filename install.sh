@@ -39,8 +39,8 @@ docker-compose build
 docker-compose up -d
 
 # Configure the CMS
-echo "Waiting for a minute to make sure the MYSQL database is ready to be linked to the WP install"
-sleep 60
+echo "Waiting for two minutes to make sure the MYSQL database is ready to be linked to the WP install"
+sleep 120
 docker-compose run --rm setup /home/wp-ami-setup.sh
 
 # Install database for community tools
