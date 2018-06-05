@@ -1,4 +1,4 @@
-# Bases the image on Ubuntu 16.04 (since 18.04 is still not available)
+# Bases the image on Ubuntu 18.04
 FROM ubuntu:18.04
 
 # Replace shell with bash so we can source files
@@ -8,6 +8,10 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN apt update && \
     apt upgrade -y && \
     apt install gnupg apt-transport-https ca-certificates nodejs wget curl bzip2 git -y
+
+RUN wget -q -O /tmp/libpng12.deb https://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
+  && dpkg -i /tmp/libpng12.deb \
+  && rm /tmp/libpng12.deb
 
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 9.0.0
