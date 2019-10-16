@@ -1,3 +1,9 @@
+# THIS PROJECT IS OUT OF DATE
+
+NOTE: THIS PROJECT IS ARCHIVED AND NEWEST CODE IS UP AT https://github.com/citizenlab/ami
+
+This repo will not be updated and is only here for historical purposes.
+
 # AMI Docker
 
 Access My Info (AMI) is a web application that makes it easy for people to create requests for access to their personal information.
